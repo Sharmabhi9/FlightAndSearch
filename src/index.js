@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyparser=require('body-parser');
-const { PORT } = require('./config/serverconfig'); // Adjust the path if necessary
-
+const { PORT } = require('./config/serverconfig'); 
+const cityrepository=require('./Repository/city-repository');
 const setupAndStartServer = async () => {
     const app = express();
-    //const PORT=3000;
+   
     app.use(bodyparser.json());
     app.use(bodyparser.urlencoded({extended:true}));
     app.listen(PORT, () => {
